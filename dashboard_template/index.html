@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- third party css -->
+    <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <!-- third party css end -->
+
+    <!-- App css -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <div style="width: 35%; margin:5px; height: 100%; float: left;"> 
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card widget-flat">
+                    <div class="card-body">
+                        <div class="float-end">
+                            <i class="mdi mdi-cart-arrow-right widget-icon"></i>
+                        </div>
+                        <h6 class="text-muted fw-normal mt-0" title="Number of Customers">
+                            ACTIVE ORDERS COUNT</h6>
+                        <h3 class="mt-3 mb-3">"237"</h3>
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col-->
+            <div class="col-sm-6">
+                <div class="card widget-flat">
+                    <div class="card-body">
+                        <div class="float-end">
+                            <i class="mdi mdi-cart-off widget-icon"></i>
+                        </div>
+                        <h6 class="text-muted fw-normal mt-0" title="Number of Orders">NOT PROCEEDED
+                                 YET
+                        </h6>
+                        <h3 class="mt-3 mb-3">"1"</h3>
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col-->
+        </div> <!-- end row -->
+        <!-- ######################################################################## -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="dropdown float-end">
+                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">Weekly Report</a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">Monthly Report</a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">Settings</a>
+                            </div>
+                        </div>
+                        <h4 class="header-title mb-4">Services and Orders</h4>
+
+                        <div dir="ltr">
+                            <div class="mt-3 chartjs-chart" style="height: 350px;">
+                                <canvas id="task-area-chart" data-bgColor="#727cf5"
+                                    data-borderColor="#727cf5"></canvas>
+                            </div>
+                        </div>
+
+                    </div> <!-- end card body-->
+                </div> <!-- end card -->
+            </div><!-- end col-->
+        
+        <!-- end row-->
+    
+        <!-- ################################################################################### -->
+
+        <div>
+            <div class="card card-h-100">
+                <div class="card-body">
+                    <div>
+                    </div>
+                    <ul class="nav float-end d-none d-lg-flex">
+                        <li class="nav-item">
+                            <a class="nav-link text-muted" href="#">Today</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-muted" href="#">7d</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">15d</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-muted" href="#">1m</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-muted" href="#">1y</a>
+                        </li>
+                    </ul>
+                    <h4 class="header-title mb-3">Monthly Incoming Data</h4>
+
+                    <div dir="ltr">
+                        <div id="sessions-overview" class="apex-charts mt-3" data-colors="#0acf97">
+                        </div>
+                    </div>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+
+        </div>
+    </div>
+</div>
+<div style="width: 23%; margin:5px; height: 100%; float: left;"> 
+<div class="card">
+    <div class="card-body">
+
+        <h6 class="header-title">Numbers of Data by Services</h6>
+        <div class="tab-content">
+            <div class="tab-pane show active" id="basic-example-preview">
+                <div class="table-responsive-sm">
+                    <table class="table table-centered mb-0">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ST Turk Takipci</td>
+                                <td>44717</td>
+                            </tr>
+                            <tr>
+                                <td>Yorum</td>
+                                <td>318054</td>
+                            </tr>
+                            <tr>
+                                <td>Foreign SY Takipci</td>
+                                <td>5886</td>
+
+                            </tr>
+                            <tr>
+                                <td>Twitter Follower</td>
+                                <td>29617</td>
+
+                            </tr>
+                            <tr>
+                                <td>ST Like</td>
+                                <td>51027</td>
+
+                            </tr>
+                            <tr>
+                                <td>SY Like</td>
+                                <td>39171</td>
+
+                            </tr>
+                            <tr>
+                                <td>41-Izlenme</td>
+                                <td>127613</td>
+                            </tr>
+                            <tr>
+                                <td>42-Izlenme</td>
+                                <td>81568</td>
+                            </tr>
+                            <tr>
+                                <td>43-Izlenme</td>
+                                <td>108873</td>
+                            </tr>
+                            <tr>
+                                <td>44-Izlenme</td>
+                                <td>57666</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> <!-- end table-responsive-->                     
+            </div> <!-- end preview-->
+        </div>
+    </div>
+</div>     
+
+<div class="card">
+<div class="card-body">
+<h4 class="header-title">Number of Passive Data According to Status</h4>
+<div class="tab-content">
+<div class="tab-pane show active" id="basic-example-preview">
+    <div class="table-responsive-sm">
+        <table class="table table-centered mb-0">
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Feedback</td>
+                    <td>44717</td>
+                </tr>
+                <tr>
+                    <td>Sentry Block</td>
+                    <td>318054</td>
+                </tr>
+                <tr>
+                    <td>Login_Required</td>
+                    <td>5886</td>
+
+                </tr>
+                <tr>
+                    <td>Challenge_Required</td>
+                    <td>29617</td>
+                </tr>
+                <tr>
+                    <td>RecaptchaChallengeForm</td>
+                    <td>29617</td>
+                </tr>
+            </tbody>
+        </table>
+    </div> <!-- end table-responsive-->                     
+</div> <!-- end preview-->
+</div>
+</div>     
+</div>
+</div>
+
+
+
+
+<div style="width: 21%; margin:5px; height: 100%; float: left;"> 
+    <div class="card">
+        <div class="card-body" style="height: 250px;">
+            <div class="dropdown float-end">
+                <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="mdi mdi-history widget-icon"></i>
+                    <i class="mdi mdi-dots-vertical"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Profit</a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                </div>
+            </div>
+            <h4 class="header-title mb-2">Oldest 3 Orders</h4>
+
+            <div data-simplebar style="max-height: 419px;"> 
+                <div class="timeline-alt pb-0">
+                    <div class="timeline-item">                       
+                        <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon" ></i>
+                        <div class="timeline-item-info">
+                            <a href="#" class="text-info fw-bold mb-1 d-block">17193284</a>
+                            <p class="mb-0 pb-2">
+                                <small class="text-muted">31.12.2022</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon" ></i>
+                        <div class="timeline-item-info">
+                            <a href="#" class="text-info fw-bold mb-1 d-block">17193283</a>
+                            <p class="mb-0 pb-2">
+                                <small class="text-muted">31.12.2022</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon" ></i>
+                        <div class="timeline-item-info">
+                            <a href="#" class="text-info fw-bold mb-1 d-block">17193282</a>
+                            <p class="mb-0 pb-2">
+                                <small class="text-muted">31.12.2022</small>
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- end timeline -->
+            </div> <!-- end slimscroll -->
+            <div class="card">
+            <div class="card-body">
+                <i class='uil uil-users-alt float-end widget-icon'></i>
+                <h6 class="text-uppercase mt-0">Number of users per day</h6>
+                <h2 class="my-2" id="">2452</h2>
+            </div> <!-- end card-body-->
+            </div>
+            <div class="card">
+            <div class="card-body" style="height: 630px;" >
+                <h4 class="header-title">Speed Status by Servers</h4>
+                <div class="tab-content">
+                    <div class="tab-pane show active" id="basic-example-preview">
+                        <div class="table-responsive-sm">
+                            <table class="table table-centered mb-0">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NewMain</td>
+                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XIG</td>
+                                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XIG2</td>
+                                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>                  
+                                    </tr>
+                                    <tr>
+                                        <td>Ordu</td>
+                                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ordu2</td>
+                                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41-Hostumo</td>
+                                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>
+                                    </tr>
+                                    <tr>
+                                        <td>HD Proxy Public</td>
+                                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MainServer</td>
+                                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Light Server</td>
+                                        <td><img src="./symb/speed.png" alt="" width= 20; height= 22 style="margin:6px;">2.21s</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> <!-- end table-responsive-->                     
+                    </div> <!-- end preview-->
+                </div>
+            </div>
+</div>
+</div>
+
+<div style="width: 18%; margin:5px; height: 100%; float: left;"> 
+    <div>
+        
+    <div class="card">
+        <div class="card-body">
+            <div class="float-end">
+                <i class="mdi mdi-server-off widget-icon"></i>
+            </div>
+        <h4 class="header-title mb-2">Offline Servers</h4>
+        <div class="d-flex mt-2 p-2">
+            <div class="avatar-sm d-table">
+                <span class="avatar-title bg-success-lighten rounded-circle text-success">
+                    <img src="./symb/offline.png" height="50" width="50" alt="">
+                </span>
+            </div>
+            <div class="ms-2">
+                <h5 class="mt-0 mb-0">
+                    Light Server
+                </h5>
+                <p class="mt-1 mb-0 text-muted">
+                    ssh, root
+                </p>
+            </div>
+        </div>
+    </a>
+
+    <a href="javascript:void(0);" class="text-body">
+        <div class="d-flex mt-1 px-2 py-2">
+            <div class="avatar-sm d-table">
+                <span
+                    class="avatar-title bg-success-lighten rounded-circle text-success">
+                    <img src="./symb/offline.png" height="50" width="50" alt="">
+                </span>
+            </div>
+            <div class="ms-2">
+                <h5 class="mt-0 mb-0">
+                    Light Server
+                   
+                </h5>
+                <p class="mt-1 mb-0 text-muted">
+                    ssh, root
+                </p>
+            </div>
+        </div> 
+    
+    </div>
+    </div>
+    <div>
+    <div class="card">
+        <div class="card-body" >
+            <div class="float-end">
+                <i class="mdi mdi-server widget-icon"></i>
+            </div>
+    <h3 class="header-title mb-2">Online Servers</h3>
+    <a href="javascript:void(0);" class="text-body">
+        <div class="d-flex mt-1 px-2 py-2">
+            <div class="avatar-sm d-table">
+                <span
+                    class="avatar-title bg-warning-lighten rounded-circle text-warning">
+                    <img src="./symb/online.png" height="50" width="50" alt="">
+                </span>
+            </div>
+            <div class="ms-2">
+                <h5 class="mt-0 mb-0">
+                    New Main
+                </h5>
+                <p class="mt-1 mb-0 text-muted">
+                    ssh, root
+                </p>
+            </div>
+        </div>
+    </a>
+
+    <a href="javascript:void(0);" class="text-body">
+        <div class="d-flex mt-1 px-2 py-2">
+            <div class="avatar-sm d-table">
+                <span
+                    class="avatar-title bg-warning-lighten rounded-circle text-warning">
+                    <img src="./symb/online.png" height="50" width="50" alt="">
+                </span>
+            </div>
+            <div class="ms-2">
+                <h5 class="mt-0 mb-0">
+                    XIG
+                </h5>
+                <p class="mt-1 mb-0 text-muted">
+                    ssh, root
+                </p>
+            </div>
+        </div>
+    </a>
+
+    <a href="javascript:void(0);" class="text-body">
+        <div class="d-flex mt-1 px-2 py-2">
+            <div class="avatar-sm d-table">
+                <span
+                    class="avatar-title bg-danger-lighten rounded-circle text-danger">
+                    <img src="./symb/online.png" height="50" width="50" alt="">
+                </span>
+            </div>
+            <div class="ms-2">
+                <h5 class="mt-0 mb-0">
+                    XIG2
+                </h5>
+                <p class="mt-1 mb-0 text-muted">
+                    ssh, root
+                </p>
+            </div>
+        </div>
+    </a>
+
+    <a href="javascript:void(0);" class="text-body">
+        <div class="d-flex mt-1 px-2 py-2">
+            <div class="avatar-sm d-table">
+                <span
+                    class="avatar-title bg-success-lighten rounded-circle text-success">
+                    <img src="./symb/online.png" height="50" width="50" alt="">
+                </span>
+            </div>
+            <div class="ms-2">
+                <h5 class="mt-0 mb-0">
+                    Ordu
+
+                </h5>
+                <p class="mt-1 mb-0 text-muted">
+                    ssh, root
+                </p>
+            </div>
+        </div>
+    </a>
+
+    <a href="javascript:void(0);" class="text-body">
+        <div class="d-flex mt-1 px-2 py-2">
+            <div class="avatar-sm d-table">
+                <span
+                    class="avatar-title bg-danger-lighten rounded-circle text-danger">
+                    <img src="./symb/online.png" height="50" width="50" alt="">
+                </span>
+            </div>
+            <div class="ms-2">
+                <h5 class="mt-0 mb-0">
+                    Ordu2
+                </h5>
+                <p class="mt-1 mb-0 text-muted">
+                    ssh, root
+                </p>
+            </div>
+        </div>
+        </a>
+
+        <a href="javascript:void(0);" class="text-body">
+            <div class="d-flex mt-1 px-2 py-2">
+                <div class="avatar-sm d-table">
+                    <span
+                        class="avatar-title bg-danger-lighten rounded-circle text-danger">
+                        <img src="./symb/online.png" height="50" width="50" alt="">
+                    </span>
+                </div>
+                <div class="ms-2">
+                    <h5 class="mt-0 mb-0">
+                        41-Hostumo
+                    </h5>
+                    <p class="mt-1 mb-0 text-muted">
+                        ssh, root
+                    </p>
+                </div>
+            </div>
+            </a>
+
+        <a href="javascript:void(0);" class="text-body">
+            <div class="d-flex mt-1 px-2 py-2">
+                <div class="avatar-sm d-table">
+                    <span
+                        class="avatar-title bg-danger-lighten rounded-circle text-danger">
+                        <img src="./symb/online.png" height="50" width="50" alt="">
+                    </span>
+                </div>
+                <div class="ms-2">
+                    <h5 class="mt-0 mb-0">
+                        HD Proxy Public
+                    </h5>
+                    <p class="mt-1 mb-0 text-muted">
+                       ssh, root
+                    </p>
+                </div>
+            </div>
+            </a>
+
+        <a href="javascript:void(0);" class="text-body">
+            <div class="d-flex mt-1 px-2 py-2">
+                <div class="avatar-sm d-table">
+                    <span
+                        class="avatar-title bg-success-lighten rounded-circle text-success">
+                        <img src="./symb/online.png" height="50" width="50" alt="">
+                    </span>
+                </div>
+                <div class="ms-2">
+                    <h5 class="mt-0 mb-0">
+                        Main Server
+                       
+                    </h5>
+                    <p class="mt-1 mb-0 text-muted">
+                        ssh, root
+                    </p>
+                </div>
+            </div>        
+</div>
+</div>
+</div>
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Right Sidebar -->
+    <div class="end-bar">
+
+        <div class="rightbar-title">
+            <a href="javascript:void(0);" class="end-bar-toggle float-end">
+                <i class="dripicons-cross noti-icon"></i>
+            </a>
+            <h5 class="m-0">Settings</h5>
+        </div>
+
+        <div class="rightbar-content h-100" data-simplebar>
+
+            <div class="p-3">
+                <div class="alert alert-warning" role="alert">
+                    <strong>Customize </strong> the overall color scheme, sidebar menu, etc.
+                </div>
+
+                <!-- Settings -->
+                <h5 class="mt-3">Color Scheme</h5>
+                <hr class="mt-1" />
+
+                <div class="form-check form-switch mb-1">
+                    <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light"
+                        id="light-mode-check" checked>
+                    <label class="form-check-label" for="light-mode-check">Light Mode</label>
+                </div>
+
+                <div class="form-check form-switch mb-1">
+                    <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark"
+                        id="dark-mode-check">
+                    <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
+                </div>
+
+
+                <script src="assets/js/vendor.min.js"></script>
+                <script src="assets/js/app.min.js"></script>
+
+                <!-- third party js -->
+                <!-- <script src="assets/js/vendor/Chart.bundle.min.js"></script> -->
+                <script src="assets/js/vendor/apexcharts.min.js"></script>
+                <script src="assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+                <script src="assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+                <!-- third party js ends -->
+
+                <!-- demo app -->
+                <script src="assets/js/pages/demo.dashboard-analytics.js"></script>
+                <!-- end demo js-->
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <script>document.write(new Date().getFullYear())</script> ©
+                                Hyper -
+                                Coderthemes.com
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-md-end footer-links d-none d-md-block">
+                                    <a href="javascript: void(0);">About</a>
+                                    <a href="javascript: void(0);">Support</a>
+                                    <a href="javascript: void(0);">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Right Sidebar -->
+        <div class="end-bar">
+
+            <div class="rightbar-title">
+                <a href="javascript:void(0);" class="end-bar-toggle float-end">
+                    <i class="dripicons-cross noti-icon"></i>
+                </a>
+                <h5 class="m-0">Settings</h5>
+            </div>
+
+            <div class="rightbar-content h-100" data-simplebar>
+
+                <div class="p-3">
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Customize </strong> the overall color scheme, sidebar menu, etc.
+                    </div>
+
+                    <!-- Settings -->
+                    <h5 class="mt-3">Color Scheme</h5>
+                    <hr class="mt-1" />
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light"
+                            id="light-mode-check" checked>
+                        <label class="form-check-label" for="light-mode-check">Light
+                            Mode</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark"
+                            id="dark-mode-check">
+                        <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
+                    </div>
+
+
+                    <!-- Width -->
+                    <h5 class="mt-4">Width</h5>
+                    <hr class="mt-1" />
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="width" value="fluid" id="fluid-check"
+                            checked>
+                        <label class="form-check-label" for="fluid-check">Fluid</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
+                        <label class="form-check-label" for="boxed-check">Boxed</label>
+                    </div>
+
+
+                    <!-- Left Sidebar-->
+                    <h5 class="mt-4">Left Sidebar</h5>
+                    <hr class="mt-1" />
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="theme" value="default" id="default-check">
+                        <label class="form-check-label" for="default-check">Default</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="theme" value="light" id="light-check"
+                            checked>
+                        <label class="form-check-label" for="light-check">Light</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" name="theme" value="dark" id="dark-check">
+                        <label class="form-check-label" for="dark-check">Dark</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="compact" value="fixed" id="fixed-check"
+                            checked>
+                        <label class="form-check-label" for="fixed-check">Fixed</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="compact" value="condensed"
+                            id="condensed-check">
+                        <label class="form-check-label" for="condensed-check">Condensed</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="compact" value="scrollable"
+                            id="scrollable-check">
+                        <label class="form-check-label" for="scrollable-check">Scrollable</label>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
+
+                        <a href="https://themes.getbootstrap.com/product/hyper-responsive-admin-dashboard-template/"
+                            class="btn btn-danger mt-3" target="_blank"><i class="mdi mdi-basket me-1"></i>
+                            Purchase Now</a>
+                    </div>
+                </div> <!-- end padding-->
+
+            </div>
+        </div>
+
+        <div class="rightbar-overlay"></div>
+        <!-- /End-bar -->
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+        <!-- third party js -->
+        <script src="assets/js/vendor/apexcharts.min.js"></script>
+        <script src="assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.dashboard.js"></script>
+        <!-- end demo js-->
+
+        <div class="rightbar-overlay"></div>
+        <!-- /End-bar -->
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+        <!-- third party js -->
+        <script src="assets/js/vendor/Chart.bundle.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.dashboard-projects.js"></script>
+        <script src="assets/js/functions.js"></script>
+
+        <!-- end demo js-->
+        
+</body>
+
+</html>
